@@ -1,0 +1,451 @@
+/* ======================================================
+   UTS Pemrograman Web - Twenty Three Coffee Shop
+   Vanilla CSS (Tanpa Framework)
+   ====================================================== */
+
+:root {
+    --primary: #3d2314;        /* Dark Espresso */
+    --primary-light: #5a3821;  /* Medium Roast */
+    --secondary: #c89666;      /* Warm Caramel / Latte */
+    --accent: #d4a373;         /* Warm Sand */
+    --bg-light: #fdfbf7;       /* Soft Cream */
+    --card-bg: #ffffff;
+    --text-main: #2b2b2b;
+    --text-muted: #756d66;
+    --border-color: #eeddc9;
+    --badge-best: #e67e22;     /* Orange Amber */
+    --badge-promo: #27ae60;    /* Hijau Promo */
+    --badge-danger: #c0392b;   /* Merah Habis */
+}
+
+/* Aturan Global Wajib */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+}
+
+/* Semantik: Header & Navbar */
+header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(45, 26, 15, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.brand-logo {
+    width: 46px;
+    height: 46px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2.5px solid var(--secondary);
+    display: block;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease;
+}
+
+.brand:hover .brand-logo {
+    transform: scale(1.06);
+}
+
+.brand-badge {
+    background-color: var(--secondary);
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.1rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.brand h1 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+nav a {
+    color: #e2d9d2;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+}
+
+nav a:hover,
+nav a.active {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+/* Semantik: Main Container */
+main.container {
+    max-width: 1100px;
+    margin: 28px auto;
+    padding: 0 20px;
+    min-height: calc(100vh - 190px);
+}
+
+/* Semantik: Section Card */
+section.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+}
+
+/* Hero Section */
+.hero-banner {
+    background: linear-gradient(rgba(61, 35, 20, 0.85), rgba(61, 35, 20, 0.9)), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80') center/cover;
+    color: #ffffff;
+    border-radius: 14px;
+    padding: 44px 30px;
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.hero-banner h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.hero-banner p {
+    font-size: 1.05rem;
+    color: #f0e6dd;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Stats Section */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.stat-box {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 16px 20px;
+    text-align: center;
+    border-top: 4px solid var(--secondary);
+}
+
+.stat-box .stat-label {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-box .stat-val {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-top: 4px;
+}
+
+/* Filters & Search Form */
+.filter-card {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
+.input-search {
+    flex: 2;
+    min-width: 220px;
+    padding: 10px 14px;
+    border: 1px solid #d4c5b9;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background: #fdfdfc;
+}
+
+.input-select {
+    flex: 1;
+    min-width: 150px;
+    padding: 10px 14px;
+    border: 1px solid #d4c5b9;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background: #fdfdfc;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-light);
+}
+
+.btn-reset {
+    background-color: #e2e0dc;
+    color: #444;
+}
+
+.btn-reset:hover {
+    background-color: #d1cfcb;
+}
+
+/* Menu Grid */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 22px;
+}
+
+.menu-card {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(61, 35, 20, 0.14);
+}
+
+/* Percabangan UI: Kartu Menu Habis */
+.menu-card.is-sold-out {
+    opacity: 0.78;
+    background-color: #fbf9f7;
+}
+
+.menu-card.is-sold-out .menu-img {
+    filter: grayscale(85%);
+}
+
+.menu-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+    background-color: #f7f1ea;
+    transition: transform 0.3s ease;
+}
+
+.menu-card:hover .menu-img {
+    transform: scale(1.03);
+}
+
+.menu-card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-category {
+    background-color: #f1e4d3;
+    color: var(--primary);
+}
+
+.badge-bestseller {
+    background-color: var(--badge-best);
+    color: #fff;
+}
+
+.badge-promo {
+    background-color: var(--badge-promo);
+    color: #fff;
+}
+
+.badge-danger {
+    background-color: var(--badge-danger);
+    color: #fff;
+}
+
+/* Varian Suhu (Hot / Ice) */
+.temp-pills {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 2px;
+    margin-bottom: 8px;
+}
+
+.temp-pill {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    letter-spacing: 0.3px;
+}
+
+.temp-pill.pill-hot {
+    background-color: #fbeee6;
+    color: #c0392b;
+    border: 1px solid #f5cba7;
+}
+
+.temp-pill.pill-ice {
+    background-color: #eaf2f8;
+    color: #2980b9;
+    border: 1px solid #aed6f1;
+}
+
+.menu-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.menu-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    flex: 1;
+    margin-bottom: 16px;
+}
+
+.menu-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px dashed var(--border-color);
+    padding-top: 12px;
+}
+
+.menu-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #27ae60;
+}
+
+.menu-price.price-promo {
+    color: #d35400;
+}
+
+.menu-card.is-sold-out .menu-price {
+    color: #95a5a6;
+    text-decoration: line-through;
+}
+
+/* Semantik: Footer */
+footer {
+    text-align: center;
+    padding: 28px 20px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: 48px;
+    background-color: #f7f1eb;
+}
+
+/* Responsif untuk Layar Mobile */
+@media (max-width: 640px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    nav a {
+        margin: 0 6px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .input-search,
+    .input-select,
+    .btn {
+        width: 100%;
+    }
+}
