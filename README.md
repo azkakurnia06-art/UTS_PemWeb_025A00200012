@@ -45,10 +45,10 @@ Website profil dan katalog dinamis untuk "Twenty Three Coffee". Menyajikan infor
 - `in_array()`: Untuk memeriksa apakah suatu menu minuman memiliki opsi varian suhu tertentu (`Hot` atau `Ice`) pada fungsi `filterSuhu()` dan saat merender *badge* varian.
 
 ## 6. Tangkapan Layar (Screenshots)
-![Halaman Profil](screenshots/Foto_Profil_Coffee.jpeg)
+![Halaman Profil](screenshots/profil_new.jpeg)
 ![Halaman Katalog](screenshots/Foto_Katalog_Coffee.jpeg)
 
 ## 7. Referensi dan Penggunaan AI
-- **Bantuan AI (Gemini):** Digunakan untuk merumuskan kerangka arsitektur file, template data array awal, dan panduan kode semantik. Seluruh kode telah saya validasi, sesuaikan, dan uji ulang agar sesuai dengan logika saya.
+- **Bantuan AI (Gemini):** "Digunakan sebagai referensi kerangka awal dan template data. Seluruh logika kode telah saya validasi dan sesuaikan secara mandiri."
 - **Dokumentasi Resmi PHP:** [https://www.php.net/manual/en/book.array.php](https://www.php.net/manual/en/book.array.php) (Dokumentasi fungsi array dan strict typing).
 - **Panduan Semantik MDN Web Docs:** [https://developer.mozilla.org/en-US/docs/Glossary/Semantics](https://developer.mozilla.org/en-US/docs/Glossary/Semantics) (Struktur semantik HTML5).
